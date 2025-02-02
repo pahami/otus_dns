@@ -293,8 +293,10 @@ view "default" {
 Проверим работу dns c помощью ping на хостах client, client2
 
 <details>
-<summary> client2 </summary>
 
+<summary> Результат </summary>
+
+- client2
 ---
 [vagrant@client2 ~]$ ping www.newdns.lab
 ping: www.newdns.lab: Name or service not known
@@ -315,7 +317,7 @@ PING web2.dns.lab (192.168.50.16) 56(84) bytes of data.
 rtt min/avg/max/mdev = 0.018/0.032/0.046/0.014 ms
 ---
 
-<summary> client </summary>
+- client
 
 ---
 [vagrant@client ~]$ ping www.newdns.lab

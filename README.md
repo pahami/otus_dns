@@ -66,10 +66,13 @@ FQDN (Fully Qualified Domain Name) - полностью указанное до�
 Split DNS (split-horizon или split-brain) — это конфигурация, позволяющая отдавать разные записи зон DNS в зависимости от подсети источника запроса. Данную функцию можно реализовать как с помощью одного DNS-сервера, так и с помощью нескольких DNS-серверов… 
 
 </details>
+
 ## Выполнение задания:
 
 ### Настройка рабочего стенда
+
 <details>
+
 Выполнение домашнего задания предполагает, что на компьютере установлен Vagrant+VirtualBox   
 
 Развернем Vagrant-стенд:
@@ -97,7 +100,9 @@ vagrant up
  - named.ddns.lab и named.dns.lab — файлы описания зон ddns.lab и dns.lab соответсвенно
  - master-named.conf и slave-named.conf — конфигурационные файлы, в которых хранятся настройки DNS-сервера
  - client-resolv.conf и servers-resolv.conf — файлы, в которых содержатся IP-адреса DNS-серверов
-</summary>
+
+</details>
+
 #### Задание №1
 
   - Добавить еще один сервер client2
@@ -285,9 +290,11 @@ view "default" {
 
 ```
 ---
-Для работу dns c помощью ping на хостах client, client2
+Проверим работу dns c помощью ping на хостах client, client2
+
 <details>
 <summary> client2 </summary>
+
 ---
 [vagrant@client2 ~]$ ping www.newdns.lab
 ping: www.newdns.lab: Name or service not known
@@ -307,7 +314,9 @@ PING web2.dns.lab (192.168.50.16) 56(84) bytes of data.
 2 packets transmitted, 2 received, 0% packet loss, time 1001ms
 rtt min/avg/max/mdev = 0.018/0.032/0.046/0.014 ms
 ---
+
 <summary> client </summary>
+
 ---
 [vagrant@client ~]$ ping www.newdns.lab
 PING www.newdns.lab (192.168.50.15) 56(84) bytes of data.
@@ -328,4 +337,5 @@ rtt min/avg/max/mdev = 0.020/0.029/0.038/0.009 ms
 [vagrant@client ~]$ ping web2.dns.lab
 ping: web2.dns.lab: Name or service not known
 ---
+
 </details>
